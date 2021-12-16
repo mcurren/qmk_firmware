@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 Copyright 2020 Jay Greco
+=======
+Copyright 2021 Jay Greco
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,7 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
+<<<<<<< HEAD
 #define _BASE 1
+=======
+#define _BASE 0
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -28,7 +36,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+<<<<<<< HEAD
 #ifdef OLED_DRIVER_ENABLE
+=======
+#ifdef OLED_ENABLE
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 static void render_logo(void) {
     static const char PROGMEM nullbits_logo[] = {
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -67,8 +79,14 @@ static void render_logo(void) {
     oled_write_raw_P(nullbits_logo, sizeof(nullbits_logo));
 }
 
+<<<<<<< HEAD
 void oled_task_user(void) {
     render_logo();
+=======
+bool oled_task_user(void) {
+    render_logo();
+    return false;
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 }
 #endif
 
@@ -76,10 +94,18 @@ void matrix_init_user(void) {
   set_scramble_LED(LED_OFF);
 }
 
+<<<<<<< HEAD
 void encoder_update_user(uint8_t index, bool clockwise) {
+=======
+bool encoder_update_user(uint8_t index, bool clockwise) {
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
     if (clockwise) {
         tap_code(KC_VOLU);
     } else {
         tap_code(KC_VOLD);
     }
+<<<<<<< HEAD
+=======
+    return true;
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 }

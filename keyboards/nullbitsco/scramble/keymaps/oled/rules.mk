@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 OLED_DRIVER_ENABLE = yes
+=======
+OLED_ENABLE = yes
+OLED_DRIVER = SSD1306
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43

@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 Copyright 2020 Jay Greco
+=======
+Copyright 2021 Jay Greco
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -52,10 +56,20 @@ void matrix_init_user(void) {
     set_scramble_LED(LED_OFF);
 }
 
+<<<<<<< HEAD
 void encoder_update_user(uint8_t index, bool clockwise) {
+=======
+bool encoder_update_user(uint8_t index, bool clockwise) {
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
     if (clockwise) {
         tap_code(KC_VOLU);
     } else {
         tap_code(KC_VOLD);
+<<<<<<< HEAD
     }   
 }
+=======
+    }
+    return true;
+}
+>>>>>>> aed64aaef4724c01a30b1815c0c910ca8b1a5e43
