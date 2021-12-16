@@ -1,0 +1,13 @@
+{
+  "name": "Bento Box",
+  "vendorId": "0x6E67",
+  "productId": "0x4242",
+  "lighting": "qmk_rgblight",
+  "matrix": {"rows": 2,"cols": 3},
+  "layouts": {
+    "keymap": [
+      ["0,0","0,1",{"x":0.25},"0,2"],
+      ["1,0","1,1",{"x":0.25},"1,2"]
+    ]
+  }
+}

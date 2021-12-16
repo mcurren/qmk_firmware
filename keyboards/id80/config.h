@@ -92,3 +92,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration: use the Esc key */
 #define BOOTMAGIC_LITE_ROW      0
 #define BOOTMAGIC_LITE_COLUMN   5
+
+/* for mac sleep issues */
+// #define NO_USB_STARTUP_CHECK

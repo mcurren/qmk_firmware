@@ -17,8 +17,39 @@
 
 #include "quantum.h"
 
-#define LAYOUT( \
-  K00  \
-) { \
-  { K00 } \
-}
+#ifdef KEYBOARD_uno_rev1
+    #include "rev1/rev1.h"
+#elif KEYBOARD_uno_rev2
+    #include "rev2/rev2.h"
+#endif
+
+#include "via.h" // only for EEPROM address
+#define EEPROM_ENABLED_ENCODER_MODES (VIA_EEPROM_CUSTOM_CONFIG_ADDR)
+
+enum encoder_modes {
+  ENC_MODE_VOLUME,
+  ENC_MODE_BRIGHTNESS,
+  ENC_MODE_CUSTOM0,
+  ENC_MODE_CUSTOM1,
+  ENC_MODE_CUSTOM2,
+};
+
+enum custom_encoder_behavior {
+  ENC_CUSTOM_CW = 0,
+  ENC_CUSTOM_CCW,
+  ENC_CUSTOM_PRESS
+};
+
+// Encoder Behavior
+extern uint8_t encoder_value;
+extern uint8_t encoder_mode;
+extern uint8_t enabled_encoder_modes;
+
+void pre_encoder_mode_change(void);
+void post_encoder_mode_change(void);
+void change_encoder_mode(bool negative);
+uint16_t handle_encoder_clockwise(void);
+uint16_t handle_encoder_ccw(void);
+uint16_t handle_encoder_press(void);
+uint16_t retrieve_custom_encoder_config(uint8_t encoder_idx, uint8_t behavior);
+void set_custom_encoder_config(uint8_t encoder_idx, uint8_t behavior, uint16_t new_code);
